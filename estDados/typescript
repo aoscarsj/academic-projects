@@ -1,10 +1,4 @@
-Script iniciado em ter 28 mai 2019 14:12:50 BRT
-]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ /scr[K[K[K[Kscr
-scratch       screendump    script        scriptreplay  
-]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ scr
-scratch       screendump    script        scriptreplay  
-]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ script
-Script iniciado, o arquivo é typescript
+Script iniciado em ter 28 mai 2019 14:13:06 BRT
 ]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ rm script 
 ]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ touch script.sh
 ]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ gedit script.sh 
@@ -52,4 +46,16 @@ Commitando
 [master 79642e2] Atualizações por Script
  1 file changed, 1 insertion(+)
 Fazendo push
-Username for 'https://gi
+Username for 'https://github.com': ^[[A^[[A^C
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ bash script.sh gimp
+Fazendo git add
+Commitando
+[master 519cba7] Atualizações por Script
+ 2 files changed, 56 insertions(+), 1 deletion(-)
+Fazendo push
+Username for 'https://github.com': ^[[A^C
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ bash script.sh gimp
+Fazendo git add
+Commitando
+[master e1c6689] Atualizações por Script
+ 1 file changed, 1 
