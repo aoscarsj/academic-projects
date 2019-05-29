@@ -15,6 +15,10 @@ struct cell{
     cell_t *next;
 };
 cell_t *newCell();
+int size(queue_t *);
+int maxSize(queue_t *);
+element_t *front(queue_t *);
+element_t *back(queue_t *);
 bool isEmpty(queue_t *);
 void display(queue_t *);
 element_t *dequeue(queue_t *);
@@ -23,13 +27,53 @@ bool enqueue(element_t *, queue_t *);
 
 int main(){
   queue_t *fila = newQueue();
-  element_t *x;
-  int valor = 5;
-  x =  &valor;
-  //printf("%d\n", *x);
-  enqueue(x, fila);
+  int v[5];
+  for(int i=1;i<=5;i++){
+    v[i-1] = i;
+    enqueue(&v[i-1], fila);
+  }
+  display(fila);
+  printf("\nPrimeiro elemento da fila: %d\n", *(front(fila)));
+  printf("Ultimo elemento da fila: %d\n", *(back(fila)));
+
+  printf("Size fila: %d\n", fila->size );
+}
+void display(queue_t *q){
+  if(isEmpty(q))
+    printf("Fila vazia, coloque preencha primeiro.\n");
+  else {
+    printf("Elementos da fila:" );
+    while(q->first != q->last){
+      printf(" %d", *(q->first->element));
+      q->first = q->first->next;
+    }
+    printf(" %d\n", *q->last->element);
+  }
 }
 
+element_t *front(queue_t *q){
+  if(isEmpty(q)) return NULL;
+  return q->first->element;
+}
+element_t *back(queue_t *q){
+  if(isEmpty(q)) return NULL;
+  return q->last->element;
+}
+int size(queue_t *q){
+  return q->size;
+}int maxSize(queue_t *q){
+  return q->maxsize;
+}
+element_t *dequeue(queue_t *q){
+  if(isEmpty(q)) return NULL;
+  cell_t *p = q->first;
+  q->first = q->first->next;
+  if(q->last == p) q->last = NULL;
+  element_t *el = p->element;
+  free(p);
+  q->size--;
+  return el;
+}
 bool enqueue(element_t *x, queue_t *q){
   cell_t *p = newCell();
   if(!p) return false;
