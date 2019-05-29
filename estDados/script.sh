@@ -4,5 +4,3 @@ echo "Commitando"
 git commit -m "Atualizações por Script"
 echo "Fazendo push"
 git push
-sleep 2
-
