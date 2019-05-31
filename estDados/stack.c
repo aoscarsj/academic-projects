@@ -34,9 +34,10 @@ int main(){
 }
 void display(stack_t *s){
   if(!isEmpty(s)){
-    while(s->top != NULL){
-      printf("%d ",s->top->el);
-      s->top = s->top->next;
+    cell_t *c = s->top;
+    while(c != NULL){
+      printf("%d ",c->el);
+      c = c->next;
     }
     printf("\n");
   }else {
