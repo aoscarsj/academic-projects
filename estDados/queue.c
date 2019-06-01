@@ -43,11 +43,12 @@ void display(queue_t *q){
     printf("Fila vazia, coloque preencha primeiro.\n");
   else {
     printf("Elementos da fila:" );
-    while(q->first != q->last){
-      printf(" %d", *(q->first->element));
-      q->first = q->first->next;
+    cell_t *c = q->first;
+    while(c != q->last){
+      printf(" %d", *(c->element));
+      c = c->next;
     }
-    printf(" %d\n", *q->last->element);
+    printf(" %d\n", *c->element);
   }
 }
 

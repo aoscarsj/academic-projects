@@ -1,2 +1,2 @@
 
-gcc stack.c && ./a.out
+gcc queue.c && ./a.out
