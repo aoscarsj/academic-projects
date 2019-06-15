@@ -7,7 +7,7 @@ typedef struct node{
 	struct node *left, *right;
 }iTree;
 typedef iTree* Tree;
-
+// Arvore Binaria de Busca
 Tree newTree();
 Tree insert(element_t, Tree);
 
@@ -24,6 +24,7 @@ Tree insert(element_t x, Tree t){
 	if(t == NULL){
 		t = newTree();
 		t->key = x;
+		return t;
 	}
 	else if(x < t->key)
 		t->left =  insert(x, t->left);
