@@ -36,6 +36,7 @@ node_t *search(int, node_t *);
 node_t *newNode();
 void BFS(node_t *); // Nao funciona
 void DFS(node_t *, int);
+node_t *get_max(node_t *);
 // -------------- FIM ASSINATURAS --------------------------------------------------
 
 // -------------- MAIN -------------------------------------------------------------
@@ -48,6 +49,7 @@ int main(){
   //DFS(tree,1);
   printf("\n------------\n" );
   //DFS(tree,2);
+  tree = delete(110,tree);
   BFS(tree);
   printf("\n------------\n" );
 //  DFS(tree,3);
@@ -81,6 +83,10 @@ node_t *delete(key x, node_t *t){
       t->left = delete(p->element, t->left);
     }
   }
+  return t;
+}
+node_t *get_max(node_t *t){
+  while(t->right) t = t->right;
   return t;
 }
 node_t *newNode(){
