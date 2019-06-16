@@ -5,6 +5,7 @@
 typedef struct node node_t;
 typedef enum {false, true}bool;
 typedef node_t element_t;
+typedef int key;
 struct node {
    int element;
    node_t *left, *right;
@@ -27,13 +28,17 @@ bool enqueue(element_t *, queue_t *);
 queue_t *newQueue();
 //-------------------
 
+// -------------- ASSINATURAS TREE --------------------------------------------------
+node_t *delete(key ,node_t *);
 int height(node_t *);
 node_t *insert(int, node_t *);
 node_t *search(int, node_t *);
 node_t *newNode();
 void BFS(node_t *); // Nao funciona
 void DFS(node_t *, int);
+// -------------- FIM ASSINATURAS --------------------------------------------------
 
+// -------------- MAIN -------------------------------------------------------------
 int main(){
   node_t *tree;
   //for(int i='a';i<'m';i++) tree = insert(i, tree);
@@ -50,6 +55,33 @@ int main(){
   //printf("\n" );
   //printf("%c\n", tree->right->left->element);
    return 0;
+}
+// -------------- END MAIN ---------------------------------------------------------
+
+node_t *delete(key x, node_t *t){
+  if(t == NULL) return t;
+  if(t->element < x)
+    t->right = delete(x, t->right);
+  else if(t->element > x)
+    t->left = delete(x, t->left);
+  else { // Elemento encontrado
+    node_t *p;
+    if(t->left == NULL){
+      p = t;
+      t = t->right;
+      free(p);
+    }else if(t->right == NULL){
+      p = t;
+      t = t->left;
+      free(p);
+    }
+    else{
+      p = get_max(t->left);
+      t->element = p ->element;
+      t->left = delete(p->element, t->left);
+    }
+  }
+  return t;
 }
 node_t *newNode(){
   node_t *t = malloc(sizeof(node_t));
