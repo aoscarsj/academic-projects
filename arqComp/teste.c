@@ -1,15 +1,35 @@
-#include <stdio.h>
-#include <math.h>
 #include <omp.h>
+#define CHUNKSIZE 100
+#define N 1000
+int main(int argc, char **argv){
+ int i, chunk;
+ float a[N], b[N], c[N];
+ for (i=0; i < N; i++)
+ a[i] = b[i] = i * 1.0;
+ chunk = CHUNKSIZE;
+ #pragma omp parallel shared (a,b,c,chunk) private (i)
+ {
+ #pragma omp for schedule(dynamic,chunk) nowait
+ for (i=0; i < N; i++)
+   c[i] = a[i] + b[i];
+ } //Sinc. dos threads ? Observar clausula nowait
+}
+
+//#include <stdio.h>
+//#include <math.h>
+//#include <omp.h>
 /* compile
    export OMP_NUM_THREADS=4
    time ./codigo3-16 < in10000000 
 */
-int main(int argc, char *argv[]) {
+
+
+//int main(int argc, char *argv[]) {
+  
    
     // #pragma omp nome [cláusulas] 
     //bloco
-    int nthreads, tid;
+//    int nthreads, tid;
     // if verifica se a condicao eh verdadeira antes de criar, se sim cria
     // num_threads(int n) cria n threads
     
@@ -30,15 +50,15 @@ int main(int argc, char *argv[]) {
 //        // printf("%d ", (i+1)); 
 //      }   
 //    printf("\n");
-    int aux;
-    int vet_a[100],vet_b[100];
-    #pragma omp parallel private(aux)
-    {
-    aux = 5;
-    #pragma omp for
-      for (int i=0; i<100; i++)
-         vet_a[i]= vet_b[i] + aux *(i+1);
-    } //Sincronismo de todos os threads 
+//    int aux;
+//    int vet_a[100],vet_b[100];
+//    #pragma omp parallel private(aux)
+//    {
+//    aux = 5;
+//    #pragma omp for
+//      for (int i=0; i<100; i++)
+//         vet_a[i]= vet_b[i] + aux *(i+1);
+//    } //Sincronismo de todos os threads 
     
     
-} 
+//} 
