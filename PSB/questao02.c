@@ -10,7 +10,7 @@ int main(){
   char hexadecimal[n], resHexa[n], resBin[n*2];
   long long  valor=0;
   int i =0, aux = 1, cpValor,k=0,l=0,pot=0, aux2=0;
-
+printf("%s\n" );
   printf("Digite o número: ");
   if (opcao == 4)
     scanf("%lld", &valor);
