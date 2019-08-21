@@ -1,126 +1,185 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include <math.h>
 #define n 64
+
+// Projeto desenvolvido por: Artur Oscar Silva Santos Junior
+// Disciplina: Programacao de Software Basico
+// Professor: Tiago Oliveira
+// Paradigma: POG - Programacao Orientada a Gambiarra
+
 int printMenu();
+int pow(int, int);
+void print_Decimal_To_Hexadecimal(long long);
+long long print_Binario_To_Decimal(char *);
+char *print_Base2_To_Base1(char *);
+char *print_Base1_To_Binario(char *, int);
+void print_Base1_To_Base2(char *);
+char *print_Decimal_To_Binario(long long);
+long long print_Hexadecimal_To_Decimal(char *);
+//char *print_Binario_To_Base1(char *);
 
 int main(){
+
   int opcao = printMenu();
   char hexadecimal[n], resHexa[n], resBin[n*2];
   long long  valor=0;
   int i =0, aux = 1, cpValor,k=0,l=0,pot=0, aux2=0;
-printf("%s\n" );
+
   printf("Digite o número: ");
   if (opcao == 4)
     scanf("%lld", &valor);
   else if(opcao == 5)
-    scanf("%s\n",&hexadecimal);
+    scanf("%s",&hexadecimal);
   else
-    scanf("%s\n", &resBin);
-  printf("\n" );
+    scanf("%s", &resBin);
 
-  if(opcao == 1 || opcao == 2 || opcao == 3){
-    while(hexadecimal[k] != '\0')
-      k++;
-    k--;
-    if(opcao == 3){
-      for(int j=k;j>=0;j--){
-        if(resBin[j] == '1'){
-          resBin[j] = '0';
-          for(l=j+1; l<=k; l++)
-            resBin[l] = '1';
-          break;
-        }
-      }
-    }
-    if(opcao >= 2){
-      while(resBin[aux2] != '\0'){
-        if(resBin[aux2] == '0')
-          resBin[aux2] = '1';
-        else
-          resBin[aux2] = '0';
-        aux2++;
-      }
-    }
+  printf("\n");
 
-    while(k>=0){
-      aux = ((int)resBin[k])-48;
-      valor += (aux* pow(2, pot));
-      k--;
-      pot++;
-    }
+  if((opcao == 4 && valor == 0)){
+    printf("Hexadecimal: 0\n");
+    printf("Binario: 0\n");
+    printf("Complemento de 1: 1\n");
+    printf("Complemento de 2: 10\n");
+    return 0;
   }
-  if(opcao == 5){
-    while(hexadecimal[k] != '\0')
-      k++;
-    k--;
-    while(k>=0){
-      if(hexadecimal[k] == 'A' || hexadecimal[k] == 'a')
-        aux = 10;
-        else if(hexadecimal[k] == 'B' || hexadecimal[k] == 'b')
-          aux = 11;
-        else if(hexadecimal[k] == 'C' || hexadecimal[k] == 'c')
-          aux = 12;
-        else if(hexadecimal[k] == 'D' || hexadecimal[k] == 'd')
-          aux = 13;
-        else if(hexadecimal[k] == 'E' || hexadecimal[k] == 'e')
-          aux = 14;
-        else if(hexadecimal[k] == 'F' || hexadecimal[k] == 'f')
-          aux = 15;
-        else
-          aux = ((int)hexadecimal[k])-48;
-          valor += (aux*pow(16, pot));
-
-      k--;
-      pot++;
-    }
+  else if(opcao == 5 && hexadecimal[0] == 0){
+      printf("Decimal: 0\n");
+      printf("Binario: 0\n");
+      printf("Complemento de 1: 1\n");
+      printf("Complemento de 2: 10\n");
+      return 0;
   }
-  if(opcao != 4){
-    printf("Decimal: %lld\n",valor);
-  }
-  //decimal -> binario
-  cpValor = valor;
-  k=0;
-  while(cpValor > 0 && k<n){
-    aux = cpValor%2;
-    resBin[k++] = (char)(48+aux);
-    cpValor /= 2;
-  }
-  if(opcao != 1){
-    printf("Binario: ");
-    if(valor == 0) printf("0");
-    for(int j=k-1; j>=0;j--){
-      printf("%c",resBin[j]);
-      if(resBin[j] == '0') resBin[j] = '1';
-      else resBin[j] = '0';
-    }
-    printf("\n" );
-  }
-  if(opcao != 2){
-    printf("Binario Complemento de 1: ");
-    if(valor == 0) printf("1");
-    for(int j=k-1; j>=0; j--)
-      printf("%c",resBin[j]);
-    printf("\n");
-  }
-  if(opcao != 3){
-    for(int j=0;j<k;j++){
-      if(resBin[j] == '0'){
-        resBin[j] = '1';
-        for(l=j-1; l>=0; l--)
-          resBin[l] = '0';
+  if(opcao <4){
+    int a=0,b=0;
+    while(resBin[b] != '\0'){
+      if(resBin[b] == '1'){
+        a = 1;
         break;
       }
+      b++;
     }
-    printf("Binario Complemento de 2: ");
-    if(valor == 0) printf("10");
-    for(int j=k-1; j>=0; j--)
-      printf("%c",resBin[j]);
-    printf("\n");
+    if(a == 0){
+      printf("Hexadecimal: 0\n");
+      printf("Decimal: 0\n");
+      printf("Binario: 0\n");
+      printf("Complemento de 1: 1\n");
+      printf("Complemento de 2: 10\n");
+      return 0;
+    }
   }
-  if(opcao != 5){
-    cpValor = valor;
+  char *binario, *binario2;
+
+  if(opcao == 1){
+    valor = print_Binario_To_Decimal(resBin);
+    print_Decimal_To_Hexadecimal(valor);
+    binario2 = print_Base1_To_Binario(resBin, 2); //binario para complemento1. Gambiarra!
+    print_Base1_To_Base2(binario2);
+  }
+  else if(opcao == 2){
+    print_Base1_To_Base2(resBin);
+    binario = print_Base1_To_Binario(resBin, 1); // imprime binario
+    valor = print_Binario_To_Decimal(binario); // imprime decimal
+    print_Decimal_To_Hexadecimal(valor); //imprime hexadecimal
+  }
+  else if(opcao == 3){
+    binario = print_Base2_To_Base1(resBin); // imprime complemento 1
+    binario2 = print_Base1_To_Binario(binario, 1); //imprime binario
+    valor = print_Binario_To_Decimal(binario2); //imprime decimal
+    print_Decimal_To_Hexadecimal(valor); //imprime Hexadecimal
+  }
+  else if(opcao == 4){
+    print_Decimal_To_Hexadecimal(valor);
+    binario = print_Decimal_To_Binario(valor);
+    binario2 = print_Base1_To_Binario(binario, 2); //binario para complemento1. Gambiarra!
+    print_Base1_To_Base2(binario2);
+  }
+  else{
+    valor = print_Hexadecimal_To_Decimal(hexadecimal);
+    binario = print_Decimal_To_Binario(valor);
+    binario2 = print_Base1_To_Binario(binario, 2); //binario para complemento1. Gambiarra!
+    print_Base1_To_Base2(binario2);
+  }
+
+}
+
+//Declaracao das Funcoes
+long long print_Hexadecimal_To_Decimal(char *hexadecimal){
+  long long valor=0;
+  int k=0, pot=0,aux;
+  while(hexadecimal[k] != '\0')
+    k++;
+  k--;
+  while(k>=0){
+    if(hexadecimal[k] == 'A' || hexadecimal[k] == 'a')
+      aux = 10;
+      else if(hexadecimal[k] == 'B' || hexadecimal[k] == 'b')
+        aux = 11;
+      else if(hexadecimal[k] == 'C' || hexadecimal[k] == 'c')
+        aux = 12;
+      else if(hexadecimal[k] == 'D' || hexadecimal[k] == 'd')
+        aux = 13;
+      else if(hexadecimal[k] == 'E' || hexadecimal[k] == 'e')
+        aux = 14;
+      else if(hexadecimal[k] == 'F' || hexadecimal[k] == 'f')
+        aux = 15;
+      else
+        aux = ((int)hexadecimal[k])-48;
+        valor += (aux*pow(16, pot));
+
+    k--;
+    pot++;
+  }
+  printf("Decimal: %lld\n", valor);
+  return valor;
+}
+char *print_Decimal_To_Binario(long long valor){
+  long long cpValor = valor;
+  char *binario = malloc(sizeof(char)*n*2);
+  char temp[n*2];
+  int k=0, aux;
+  while(cpValor > 0 && k<n){
+    aux = cpValor%2;
+    temp[k++] = (char)(48+aux);
+    cpValor /= 2;
+  }
+  printf("Binario: ");
+  if(valor == 0) printf("0");
+  for(int j=k-1; j>=0;j--)
+    printf("%c",temp[j]);
+  printf("\n" );
+  int j=0;
+  for(int i=k-1;i>=0;i--)
+    binario[i] = temp[j++];
+
+  return binario;
+}
+
+void print_Base1_To_Base2(char *bin){
+  int k=0;
+  char binario[n*2];
+  while(bin[k] != '\0'){
+    binario[k] = bin[k];
+    k++;
+  }
+  for(int j=k-1;j>=0;j--){
+    if(binario[j] == '0'){
+      binario[j] = '1';
+      for(int l=j+1; l<k; l++)
+        binario[l] = '0';
+      break;
+    }
+  }
+  printf("Binario Complemento de 2: ");
+  for(int j=0; j<k; j++)
+    printf("%c",binario[j]);
+  printf("\n");
+}
+
+void print_Decimal_To_Hexadecimal(long long valor){
+    long long cpValor = valor;
+    char resHexa[n];
+    int i=0, aux;
     while(cpValor > 0 && i < n*2){
       aux = (int)cpValor % 16;
       if(aux < 10)
@@ -139,28 +198,71 @@ printf("%s\n" );
     for(int j=i-1; j>=0;j--)
       printf("%c",resHexa[j] );
     printf("\n" );
+}
+
+
+
+char *print_Base2_To_Base1(char *binario){
+  int k=0;
+  while(binario[k] != '\0')
+    k++;
+  k--;
+  for(int j=k;j>=0;j--){
+    if(binario[j] == '1'){
+      binario[j] = '0';
+      for(int l=j+1; l<=k; l++)
+        binario[l] = '1';
+      break;
+    }
   }
-/*
-  switch (opcao) {
-    case 1:
+  printf("Binario Complemento de 1: " );
+  for(int i=0;i<=k;i++)
+    printf("%c",binario[i]);
+  printf("\n");
+  return binario;
+}
 
-      break;
-    case 2:
-      printf("%d\n",opcao );
-      break;
-    case 3:
-      printf("%d\n",opcao );
-      break;
-    case 4:
-      printf("%d\n",opcao );
-      break;
-    default:
-      printf("%d\n",opcao );
-      break;
+char *print_Base1_To_Binario(char *binario, int op){
+    int i=0;
+    if(op == 1)
+      printf("Binario: ");
+    else
+      printf("Complemento de 1: ");
+    while(binario[i] != '\0'){
+      if( binario[i] == '0'){
+         printf("1");
+         binario[i] = '1';
+      }
+      else{
+        printf("0");
+        binario[i] = '0';
+      }
+      i++;
+    }
+    printf("\n");
+    return binario;
+}
 
+long long print_Binario_To_Decimal(char *binario){
+  long long valor = 0;
+  int k=0,temp,j=0;
+  while(binario[k] != '\0') k++;
+  for(int i=k-1;i>=0;i--){
+    temp = (int)binario[i] - 48;
+    valor += temp*pow(2,j);
+    j++;
   }
-  */
 
+  printf("Decimal: %lld\n",valor);
+  return valor;
+}
+
+int pow(int base, int expoente){
+  if(expoente == 0) return 1;
+  int resultado = base;
+  for(int i=1;i<expoente;i++)
+    resultado *= base;
+  return resultado;
 }
 int printMenu(){
   printf("          #########################################\n" );
