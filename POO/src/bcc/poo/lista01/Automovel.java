@@ -1,19 +1,22 @@
 package bcc.poo.lista01;
 
 /*
-1. Criar uma classe em Java que represente um automóvel. É importante guardar o
-tipo de combustível que ele utiliza (podendo ser gasolina, álcool, ou flex), o
-fabricante, o ano e o modelo. Será necessário calcular a quantidade de combustível
-necessária para percorrer determinado percurso sabendo-se que: automóvel a
-álcool faz 15 km/l e automóvel a gasolina faz 12 km/l. Para aqueles com tipo de
-combustível flex considerar metade do caminho como gasolina e a outra metade
-como álcool. */
+1. Criar uma classe em Java que represente um automï¿½vel. ï¿½ importante guardar o
+tipo de combustï¿½vel que ele utiliza (podendo ser gasolina, ï¿½lcool, ou flex), o
+fabricante, o ano e o modelo. Serï¿½ necessï¿½rio calcular a quantidade de combustï¿½vel
+necessï¿½ria para percorrer determinado percurso sabendo-se que: automï¿½vel a
+ï¿½lcool faz 15 km/l e automï¿½vel a gasolina faz 12 km/l. Para aqueles com tipo de
+combustï¿½vel flex considerar metade do caminho como gasolina e a outra metade
+como ï¿½lcool. */
 
 public class Automovel {
 	private char tipoCombustivel; // g a f
 	private String fabricante, modelo;
 	private int ano; 
 	
+	public enum tipoCombustivel{
+		GASOLINA, ALCOOL, FLEX;
+	}
 	public double combustivelParaPercurso(double distancia) {
 		double quantidade;
 		if(this.tipoCombustivel == 'g') 
