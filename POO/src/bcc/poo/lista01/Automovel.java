@@ -10,41 +10,30 @@ combust�vel flex considerar metade do caminho como gasolina e a outra metade
 como �lcool. */
 
 public class Automovel {
-	private char tipoCombustivel; // g a f
 	private String fabricante, modelo;
 	private int ano; 
+	TipoCombustivel tipoCombustivel;
 	
 	
-	public enum OpcoesMenu {    
-	    GASOLINA('g'), ALCOOL('a'), FLEX('f');
-	     
-	    private final char valor;
-	    OpcoesMenu(char valorOpcao){
-	        valor = valorOpcao;
-	    }
-	    public char getValor(){
-	        return valor;
-	    }
+	public TipoCombustivel getTipo() {
+		return tipoCombustivel;
 	}
+
+	public void setTipo(TipoCombustivel tipo) {
+		this.tipoCombustivel = tipo;
+	}
+
 	public double combustivelParaPercurso(double distancia) {
 		double quantidade;
-		if(this.tipoCombustivel == 'g') 
+		if(this.tipoCombustivel == TipoCombustivel.GASOLINA) 
 			quantidade = distancia / 12;
-		else if(this.tipoCombustivel == 'a')
+		else if(this.tipoCombustivel == TipoCombustivel.ALCOOL)
 			quantidade = distancia / 15;
 		else {
 			double metadeCaminho = distancia / 2;
 			quantidade = metadeCaminho/12 + metadeCaminho/15;
 		}
 		return quantidade;
-	}
-
-	public char getTipoCombustivel() {
-		return tipoCombustivel;
-	}
-
-	public void setTipoCombustivel(char tipoCombustivel) {
-		this.tipoCombustivel = tipoCombustivel;
 	}
 
 	public String getFabricante() {
