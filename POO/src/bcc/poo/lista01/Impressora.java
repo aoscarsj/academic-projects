@@ -1,5 +1,5 @@
 package bcc.poo.lista01;
-// 
+// Questao02
 public class Impressora {
 	private String fabricante, modelo, tecnologia;
 	private int capacidadeImpressao, velocidade;

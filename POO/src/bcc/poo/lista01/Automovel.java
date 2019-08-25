@@ -14,8 +14,17 @@ public class Automovel {
 	private String fabricante, modelo;
 	private int ano; 
 	
-	public enum tipoCombustivel{
-		GASOLINA, ALCOOL, FLEX;
+	
+	public enum OpcoesMenu {    
+	    GASOLINA('g'), ALCOOL('a'), FLEX('f');
+	     
+	    private final char valor;
+	    OpcoesMenu(char valorOpcao){
+	        valor = valorOpcao;
+	    }
+	    public char getValor(){
+	        return valor;
+	    }
 	}
 	public double combustivelParaPercurso(double distancia) {
 		double quantidade;
