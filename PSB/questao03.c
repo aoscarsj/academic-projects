@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//int **alocarmatrizA();
 int main(){
 	int **matrizA, **matrizB, **matrizC, i,j,k, resultado=0, N;
 
@@ -12,14 +11,14 @@ int main(){
 
 	matrizA = malloc (N * sizeof(int *));
 	matrizB = malloc (N * sizeof(int *));
-	matrizC = malloc(N * sizeof(int *));
+	matrizC = malloc (N * sizeof(int *));
 
 	if(matrizA == NULL || matrizB == NULL || matrizC == NULL){
-		printf("Falha na alocacao de memoria!\n" );
+		printf("Falha na alocacao de memoria! Programa esta sendo encerrado!\n" );
 		return 0;
 	}
 	for(int i=0;i<N;i++){
-		*(matrizA+i) = malloc (N*sizeof(int));
+		*(matrizA+i) = malloc(N*sizeof(int));
 		*(matrizB+i) = malloc(N*sizeof(int));
 		*(matrizC+i) = malloc(N*sizeof(int));
 
@@ -39,29 +38,38 @@ int main(){
 		for(j=0;j<N;j++)
 			scanf("%d", &*(*(matrizB+i)+j));
 
-	// pensar na logica da mult de matrizes.
-	for(i=0;i<N;i++){
-		for(j=0;j<N;j++){
-			for(k=0;k<N;k++){
-				*(*(matrizC+i)+j) += matrizA[i][k] * matrizB[k][j];
-			}
-		}
+	for(i=0;i<N;i++)
+		for(j=0;j<N;j++)
+			for(k=0;k<N;k++)
+				*(*(matrizC+i)+j) += *(*(matrizA+i)+k) * *(*(matrizB+k)+j);
+printf("\n------------------------------------\n\nMatrizA:\n");
+				for(i=0;i<N;i++){
+					for(j=0;j<N;j++)
+						printf("%d ", *(*(matrizA+i)+j));
+					printf("\n");
+				}
+printf("\nMatrizB:\n");
+				for(i=0;i<N;i++){
+					for(j=0;j<N;j++)
+						printf("%d ", *(*(matrizC+i)+j));
+					printf("\n");
+				}
 
-	}
-	printf("\n\nResultado da Multiplicacao entre as matrizes. \n");
+	printf("\nMatriz(AxB) \n");
 	for(i=0;i<N;i++){
-		for(j=0;j<N;j++)printf("%d ", matrizC[i][j]);
+		for(j=0;j<N;j++)
+			printf("%d ", *(*(matrizC+i)+j));
 		printf("\n");
 	}
+
+	for(int i=0;i<N;i++){
+		free(*(matrizA+i));
+		free(*(matrizB+i));
+		free(*(matrizC+i));
+	}
+	free(matrizA);
+	free(matrizB);
+	free(matrizC);
+
 	return 0;
 }
-
-/*int **alocarmatrizAA(){
-	int **p;
-
-}*/
-/* caso 1 res esperado
-30	36	42
-66	81	96
-102	126	150
-*/
