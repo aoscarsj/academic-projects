@@ -1,5 +1,5 @@
 package bcc.poo.lista01;
-
+// Questao02
 public class Impressora {
 	private String fabricante, modelo, tecnologia;
 	private int capacidadeImpressao, velocidade;
@@ -29,6 +29,7 @@ public class Impressora {
 	public String getTecnologia() {
 		return tecnologia;
 	}
+	//teste tes
 	public void setTecnologia(String tecnologia) {
 		this.tecnologia = tecnologia;
 	}
@@ -48,12 +49,12 @@ public class Impressora {
 }
 /* 2.
 Criar uma classe em Java que represente uma impressora. Deve-se guardar para
-esta, o fabricante, modelo, capacidade de impressão (em número de páginas),
-tecnologia (jato tinta ou laser, ou matricial) e velocidade (páginas por segundo). A
+esta, o fabricante, modelo, capacidade de impressï¿½o (em nï¿½mero de pï¿½ginas),
+tecnologia (jato tinta ou laser, ou matricial) e velocidade (pï¿½ginas por segundo). A
 classe deve atender aos seguintes itens:
-• informar o tempo necessário para imprimir um texto a partir do número de
-páginas;
-• receber um texto e imprimir (para este método considere a impressão na tela
+ï¿½ informar o tempo necessï¿½rio para imprimir um texto a partir do nï¿½mero de
+pï¿½ginas;
+ï¿½ receber um texto e imprimir (para este mï¿½todo considere a impressï¿½o na tela
 do texto recebido como se fosse na impressora);
-• informar a quantidade de páginas que ainda podem ser impressas com a
+ï¿½ informar a quantidade de pï¿½ginas que ainda podem ser impressas com a
 carga atual. */
