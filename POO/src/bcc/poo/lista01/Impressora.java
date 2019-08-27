@@ -4,6 +4,14 @@ public class Impressora {
 	private String fabricante, modelo, tecnologia;
 	private int capacidadeImpressao, velocidade;
 	
+	public Impressora(String fabricante, String modelo, String tecnologia, int capacidadeImpressao, int velocidade) {
+		this.fabricante = fabricante;
+		this.modelo = modelo;
+		this.tecnologia = tecnologia;
+		this.capacidadeImpressao = capacidadeImpressao;
+		this.velocidade = velocidade;
+	}
+	
 	public int tempoParaImpressao(int numeroPaginas) {
 		return (this.velocidade * numeroPaginas);
 	}
@@ -29,7 +37,6 @@ public class Impressora {
 	public String getTecnologia() {
 		return tecnologia;
 	}
-	//teste tes
 	public void setTecnologia(String tecnologia) {
 		this.tecnologia = tecnologia;
 	}
@@ -47,14 +54,13 @@ public class Impressora {
 	}
 	
 }
-/* 2.
-Criar uma classe em Java que represente uma impressora. Deve-se guardar para
-esta, o fabricante, modelo, capacidade de impress�o (em n�mero de p�ginas),
-tecnologia (jato tinta ou laser, ou matricial) e velocidade (p�ginas por segundo). A
+/*2. Criar uma classe em Java que represente uma impressora. Deve-se guardar para
+esta, o fabricante, modelo, capacidade de impressão (em número de páginas),
+tecnologia (jato tinta ou laser, ou matricial) e velocidade (páginas por segundo). A
 classe deve atender aos seguintes itens:
-� informar o tempo necess�rio para imprimir um texto a partir do n�mero de
-p�ginas;
-� receber um texto e imprimir (para este m�todo considere a impress�o na tela
+• informar o tempo necessário para imprimir um texto a partir do número de
+páginas;
+• receber um texto e imprimir (para este método considere a impressão na tela
 do texto recebido como se fosse na impressora);
-� informar a quantidade de p�ginas que ainda podem ser impressas com a
-carga atual. */
+• informar a quantidade de páginas que ainda podem ser impressas com a
+carga atual.  */
