@@ -1,7 +1,7 @@
 package lista01;
 
 public class q4_Animais {
-	public enum tipoAnimal{
+	public enum tipoAnimal{ 
 		MAMIFERO, ANFIBIO, AVE;
 	}
 	private tipoAnimal tipo;
