@@ -8,7 +8,7 @@ necess�ria para percorrer determinado percurso sabendo-se que: autom�vel a
 combust�vel flex considerar metade do caminho como gasolina e a outra metade
 como �lcool. */
 
-public class Automovel {
+public class q1_Automovel {
 	private String fabricante, modelo;
 	private int ano; 
 	TipoCombustivel tipoCombustivel;

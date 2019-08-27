@@ -9,7 +9,7 @@ disciplina aprovada representa 4 créditos
 faculdade
  * 
  */
-public class Aluno {
+public class q5_Aluno {
 	private String nome, curso;
 	private int anoIngresso, quantidadeDisciplinasAprovadas;
 	

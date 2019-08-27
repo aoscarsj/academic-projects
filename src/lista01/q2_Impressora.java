@@ -1,10 +1,10 @@
 package lista01;
 // Questao02
-public class Impressora {
+public class q2_Impressora {
 	private String fabricante, modelo, tecnologia;
 	private int capacidadeImpressao, velocidade;
 	
-	public Impressora(String fabricante, String modelo, String tecnologia, int capacidadeImpressao, int velocidade) {
+	public q2_Impressora(String fabricante, String modelo, String tecnologia, int capacidadeImpressao, int velocidade) {
 		this.fabricante = fabricante;
 		this.modelo = modelo;
 		this.tecnologia = tecnologia;
