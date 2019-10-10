@@ -1,10 +1,52 @@
 package projetoIncremental;
 
+import java.util.Arrays;
+
 public class Pessoa {
 	private String nome,cpf,dataNascimento,telefone; 
 	private char sexo, status, tipoUsuario; 
+	private String []qualidades = {"", "", "", "", ""};
+	private byte qtdQualidades = 0;
 	
-	public Pessoa(String nome, String cpf, char tipoUsuario) {
+	public void limparVetor() {
+		for(int i=0;i<qtdQualidades;i++)
+			qualidades[i] = "";
+		qtdQualidades = 0;
+	}
+	public void cadastrarQualidade(String qualidade, int posicao) {
+		posicao--;
+		if(posicao > 4 || posicao < 0)
+			posicao = 0;
+		this.qualidades[posicao] = qualidade;
+		this.qtdQualidades++;
+	}
+	public void cadastrarQualidade(String qualidade) {
+		int i;
+		for(i=0;i<5;i++) 
+			if(this.qualidades[i] == "") {
+				this.qualidades[i] = qualidade;
+				qtdQualidades++;
+				break;
+			}
+		if(i == 5)
+			this.qualidades[4] = qualidade;
+		
+	}
+	public void listarQualidades() {
+		System.out.println("Qualidades listadas:");
+		for(int i=0; i<qtdQualidades; i++) 
+			System.out.println(qualidades[i]);
+		
+	}
+	public void listarQualidadesOrdenadas() {
+		Arrays.sort(qualidades);
+		System.out.println("Qualidades listadas em ordem alfabetica:");
+		if(qtdQualidades < 5) 
+			qtdQualidades++;
+		for(int i=0; i<qtdQualidades; i++) 
+			System.out.println(qualidades[i]);
+	}
+	public Pessoa(String nome, String cpf, char tipoUsuario){
 		this.nome = nome;
 		this.cpf = cpf;
 		this.tipoUsuario = tipoUsuario;

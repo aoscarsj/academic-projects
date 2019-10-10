@@ -3,27 +3,23 @@ package projetoIncremental;
 public class Produto {
 	private String nome;
 	private double preco;
-	private int quantidadeNoEstoque;
+	private int codigo;
 	
-	public Produto(String nome, double preco) {
+	
+	public Produto (String nome, double preco, int codigo){
 		this.nome = nome;
 		this.preco = preco;
-		this.quantidadeNoEstoque = 0;
+		this.codigo = codigo;	
 	}
-	public Produto(String nome, double preco, int quantidadeEstoque) {
+	public Produto (String nome, double preco){
 		this.nome = nome;
 		this.preco = preco;
-		this.quantidadeNoEstoque = quantidadeEstoque;
+		
 	}
-	public void baixaSistema() {
-		this.quantidadeNoEstoque--;
+	public Produto (int codigo) { // Incremental4: Não tem como add pelo 'codigo' sem este construtor. 
+		this.codigo = codigo;
 	}
-	public void adicionarEstoque(int quantidade) {
-		this.quantidadeNoEstoque+= quantidade;
-	}
-	public void removerEstoque(int quantidade) {
-		this.quantidadeNoEstoque -= quantidade;
-	}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -36,11 +32,11 @@ public class Produto {
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
-	public int getQuantidadeNoEstoque() {
-		return quantidadeNoEstoque;
+	public int getCodigo() {
+		return codigo;
 	}
-	public void setQuantidadeNoEstoque(int quantidadeNoEstoque) {
-		this.quantidadeNoEstoque = quantidadeNoEstoque;
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 	
 }
