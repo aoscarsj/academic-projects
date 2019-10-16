@@ -77,7 +77,7 @@ asm_main:
         mov     eax, edx
         call    print_int
         call    print_nl
-        
+
         neg     edx               ; negate the remainder
         mov     eax, neg_msg
         call    print_string
@@ -87,11 +87,5 @@ asm_main:
 
         popa
         mov     eax, 0            ; return back to C
-        leave                     
+        leave
         ret
-
-
-
-
-
-
