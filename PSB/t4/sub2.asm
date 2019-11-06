@@ -1,5 +1,3 @@
-
-
 ;
 ; file: sub2.asm
 ; Subprogram example program
@@ -29,7 +27,7 @@ segment .bss
 input1  resd 1
 input2  resd 1
 
- 
+
 
 segment .text
         global  asm_main
@@ -58,7 +56,7 @@ asm_main:
 
         mov     eax, outmsg1
         call    print_string      ; print out first message
-        mov     eax, [input1]     
+        mov     eax, [input1]
         call    print_int         ; print out input1
         mov     eax, outmsg2
         call    print_string      ; print out second message
@@ -72,7 +70,7 @@ asm_main:
 
         popa
         mov     eax, 0            ; return back to C
-        leave                     
+        leave
         ret
 ;
 ; subprogram get_int
@@ -84,5 +82,3 @@ get_int:
         call    read_int
         mov     [ebx], eax         ; store input into memory
         ret                        ; jump back to caller
-
-

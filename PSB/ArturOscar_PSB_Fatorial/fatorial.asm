@@ -2,8 +2,8 @@
 ; Sofri para fazer esse. Professor, demorei de submeter pois como conversei com o sr, mudei de pc e as novas versoes do ubuntu nao contem mais por padrao o gcc-4.8-multilib.
 segment .data
 prompt db   "Digite o numero: ", 0
-outmsg db   "Resultado de fat(", 0
-outmsg2 db  "): ", 0
+outmsg db   "Resultado de ", 0
+outmsg2 db  "!: ", 0
 debug db "debug, valor de eax: ", 0
 
 segment .bss
@@ -13,7 +13,7 @@ segment .text
       global asm_main
 
 fat:
-      enter   4, 0
+      enter   0, 0
       cmp     ecx, 1
       je      ult_fat
       push    ecx
@@ -24,7 +24,6 @@ fat:
       pop     ecx
 
 ult_fat:
-      mov edx, ecx
       leave
       ret
 
