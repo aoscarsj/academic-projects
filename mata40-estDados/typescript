@@ -1,0 +1,61 @@
+Script iniciado em ter 28 mai 2019 14:13:06 BRT
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ rm script 
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ touch script.sh
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ gedit script.sh 
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ ;/[K[K./
+a.out      desafios/  materiais/ 
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ ./[K[Kscr
+scratch       screendump    script        scriptreplay  
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ scr
+scratch       screendump    script        scriptreplay  
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ script
+Script iniciado, o arquivo é typescript
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ git push.sh
+git: 'push.sh' não é um comando git. Veja 'git --help'.
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ bash 
+a.out          desafios/      materiais/     script.sh      typescript
+binary_tree.c  lista-A.c      queue.c        stack.c        
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ bash script.sh go,[K[Kimp
+Fazendo git add
+Commitando
+[master 801ddbe] Atualizações por Script
+ 2 files changed, 6 insertions(+)
+ create mode 100644 estDados/script.sh
+ create mode 100644 estDados/typescript
+Fazendo push
+Username for 'https://github.com': arthurrh
+Password for 'https://arthurrh@github.com': 
+Counting objects: 4, done.
+Delta compression using up to 2 threads.
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)   Writing objects:  50% (2/4)   Writing objects:  75% (3/4)   Writing objects: 100% (4/4)   Writing objects: 100% (4/4), 483 bytes | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/1)   [Kremote: Resolving deltas: 100% (1/1)   [Kremote: Resolving deltas: 100% (1/1), completed with 1 local object.[K
+To https://github.com/arthurrh/projetos_UFBA
+   80550e6..801ddbe  master -> master
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ bash script.sh gimp
+Fazendo git add
+Commitando
+[master 531b572] Atualizações por Script
+ 1 file changed, 1 insertion(+)
+Fazendo push
+Username for 'https://github.com': ^C
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ bash script.sh gimp
+Fazendo git add
+Commitando
+[master 79642e2] Atualizações por Script
+ 1 file changed, 1 insertion(+)
+Fazendo push
+Username for 'https://github.com': ^[[A^[[A^C
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ bash script.sh gimp
+Fazendo git add
+Commitando
+[master 519cba7] Atualizações por Script
+ 2 files changed, 56 insertions(+), 1 deletion(-)
+Fazendo push
+Username for 'https://github.com': ^[[A^C
+]0;guest-9gjwle@MAT-782164: ~/projetos_UFBA/estDados[01;32mguest-9gjwle@MAT-782164[00m:[01;34m~/projetos_UFBA/estDados[00m$ bash script.sh gimp
+Fazendo git add
+Commitando
+[master e1c6689] Atualizações por Script
+ 1 file changed, 1 
