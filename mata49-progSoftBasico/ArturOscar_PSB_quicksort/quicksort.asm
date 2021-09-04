@@ -25,11 +25,6 @@ segment   .text
      global asm_main
 
 asm_main:
-;    NOTAS: Professor, fiz o que consegui fazer, mas acho que não compreendi completamente
-;como utilizar a pilha e por isso, tentei resolver o problema da falha de segmentação mas não consegui.
-; Parti para a Implementação do Hanoi mas também travei lá, espero que o sr considere alguma coisa.
-; Muito obrigado pelo semestre professor, boas férias! 
-;
 
      enter 0,0
      pusha
